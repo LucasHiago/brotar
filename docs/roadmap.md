@@ -2,10 +2,13 @@
 
 ## Fase 0 — Planejamento (atual)
 - [x] Criar repositório e estrutura de docs
-- [ ] Fechar respostas de [open-questions.md](open-questions.md)
-- [ ] Definir escopo final do MVP
-- [ ] Escolher sensores e forma de comunicação (Wi-Fi vs BLE)
-- [ ] Escolher stack do app e do backend
+- [x] Sensor fixo 24/7, comunicação **Wi-Fi** (decidido 2026-06-16)
+- [x] Grandezas do MVP: **umidade + NPK + pH + luz**, avaliadas **por espécie**
+- [x] Projeto pessoal / open source (LICENSE adicionada)
+- [ ] Definir alimentação do sensor (solar vs tomada)
+- [ ] Definir: montar (ESP32) vs sensor pronto de mercado
+- [ ] Escolher stack do app (Expo/Flutter) e backend (Supabase/do zero)
+- [ ] Montar o catálogo inicial de espécies + faixas ideais (frutíferas alvo)
 
 ## Fase 1 — Protótipo de hardware
 - [ ] Montar protótipo do sensor (ESP32 + sensores) numa protoboard

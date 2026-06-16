@@ -1,12 +1,14 @@
 # 🌱 Brotar
 
-App para **controle e monitoramento de plantas e árvores frutíferas**, integrado a um
-**dispositivo físico (sensor de solo)** que coleta dados como umidade, nutrientes (NPK),
-pH, temperatura e luz. Com base nessas leituras, o app orienta a pessoa sobre o que fazer:
-quando regar, adubar, corrigir o solo, etc.
+App para **controle e monitoramento de árvores frutíferas**, integrado a um
+**sensor de solo fixo (24/7)** — um por árvore — que coleta umidade, nutrientes (NPK),
+pH e luz e envia por **Wi-Fi**. Com base nessas leituras, o app orienta a pessoa sobre o
+que fazer: quando regar, adubar, aplicar calcário, etc. — **avaliando cada valor conforme
+a espécie da árvore**, já que pH e luz que fazem bem a uma frutífera prejudicam outra.
 
 > Status: 📐 **Fase de planejamento.** Ainda não há código de produção — este repositório
 > guarda a visão, o escopo, as decisões de arquitetura e o planejamento de hardware.
+> Projeto **pessoal / open source** ([MIT](LICENSE)).
 
 ## Ideia em uma frase
 

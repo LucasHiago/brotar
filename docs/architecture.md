@@ -17,23 +17,22 @@ Visão de alto nível dos três blocos: **sensor físico → nuvem → app**.
       └── Wi-Fi / BLE ───────────────┘   └─── push (FCM/APNs)
 ```
 
-## Caminhos de comunicação a decidir
+## Comunicação: Wi-Fi (decidido)
 
-O sensor pode falar com a nuvem de algumas formas — a escolha muda custo, alcance e UX:
+✅ **(2026-06-16)** O sensor fica **fixo na terra 24/7** e envia as leituras **direto pela
+Wi-Fi** para a nuvem, sem depender do celular por perto.
 
-1. **Sensor → Wi-Fi → Nuvem** (ESP32 com Wi-Fi)
-   - ➕ não precisa do celular por perto; envia sozinho.
-   - ➖ depende de Wi-Fi no local da planta (quintal/pomar pode não ter).
+```
+Sensor (ESP32 + Wi-Fi) ──▶ Nuvem ──▶ App
+       fixo, 24/7
+```
 
-2. **Sensor → Bluetooth (BLE) → App → Nuvem**
-   - ➕ funciona sem Wi-Fi no local; celular faz a ponte.
-   - ➖ só sincroniza quando a pessoa chega perto com o celular.
+- ➕ Cada árvore reporta sozinha, continuamente.
+- ➖ Exige Wi-Fi com alcance até a árvore (avaliar repetidor/antena no quintal/pomar).
+- ➖ Wi-Fi ligado o tempo todo consome energia → reforça solar/tomada (ver hardware).
 
-3. **Sensor → LoRa/gateway → Nuvem** (`[futuro]`)
-   - ➕ longo alcance, ideal para pomar/área grande.
-   - ➖ mais complexo e caro.
-
-> **Decisão pendente** — ver [open-questions.md](open-questions.md).
+> Alternativas descartadas por ora: BLE (precisaria do celular como ponte) e LoRa
+> (mais caro/complexo) — podem voltar como opção futura para áreas sem Wi-Fi.
 
 ## Camadas (proposta inicial)
 
@@ -56,5 +55,13 @@ O sensor pode falar com a nuvem de algumas formas — a escolha muda custo, alca
 
 ## Decisões de arquitetura (registro)
 
-Conforme formos decidindo, anotar aqui (data + decisão + motivo). Por enquanto: **nada
-fechado** — tudo é proposta.
+- **2026-06-16** — Sensor **fixo 24/7** por árvore frutífera.
+- **2026-06-16** — Comunicação por **Wi-Fi** (sensor → nuvem direto).
+- **2026-06-16** — Grandezas do MVP: **umidade + NPK + pH + luz** (+ temperatura).
+- **2026-06-16** — Avaliação **por espécie** (faixas ideais por frutífera) → catálogo de
+  espécies é núcleo do MVP, não item futuro.
+- **2026-06-16** — App **só orienta** (não atua) nesta fase.
+- **2026-06-16** — Projeto **pessoal / open source**.
+
+Pendentes: stack do app (Expo vs Flutter), backend (Supabase vs do zero), alimentação do
+sensor (solar vs tomada), montar vs sensor pronto. Ver [open-questions.md](open-questions.md).

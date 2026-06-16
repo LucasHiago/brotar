@@ -19,8 +19,9 @@ Esboço inicial das entidades. Vai mudar conforme o escopo fechar.
 - `foto_url`
 - `criado_em`
 
-### Species (espécie) — `[v2]`
-Catálogo com as faixas ideais de cada grandeza.
+### Species (espécie) — `[MVP]`
+Catálogo com as faixas ideais de cada grandeza. **Núcleo do MVP**: sem a espécie da árvore,
+o app não sabe avaliar se pH/luz/NPK/umidade estão bons (varia por frutífera).
 - `id`
 - `nome_popular` / `nome_cientifico`
 - `tipo` (frutífera, hortaliça, ornamental…)

@@ -17,11 +17,22 @@ para o **app Brotar**, que:
 3. recomenda ações concretas ("regue hoje", "adube com NPK", "o solo está ácido demais");
 4. avisa por notificação quando algo precisa de atenção.
 
+## Foco: árvores frutíferas, uma a uma
+
+O cuidado é **por árvore frutífera**. Cada árvore tem seu próprio sensor fixo na terra,
+porque o que é ideal para uma não é para outra: **calcário (pH) e luz do sol que fazem
+bem a uma frutífera podem prejudicar outra**. Por isso o app precisa avaliar cada leitura
+**em relação à espécie daquela árvore**, não com um padrão único.
+
 ## Público-alvo
 
-- **Primário:** pessoas com plantas/frutíferas em casa ou quintal que querem cuidar melhor
-  sem ser especialistas (jardinagem doméstica, hobby, autossuficiência).
-- **Secundário (futuro):** pequenos produtores, hortas comunitárias, agricultura urbana.
+- **Primário:** pessoas com árvores frutíferas em casa, quintal ou pequeno pomar que querem
+  cuidar melhor sem ser especialistas (hobby, autossuficiência).
+- **Secundário (futuro):** hortas, ornamentais, agricultura urbana.
+
+## Natureza do projeto
+
+Projeto **pessoal** e **open source** (ver `LICENSE`). Sem fins comerciais por enquanto.
 
 ## Objetivos do produto
 
@@ -33,7 +44,7 @@ para o **app Brotar**, que:
 
 - Não é uma estação meteorológica completa.
 - Não é automação de irrigação (abrir/fechar válvula) — foco inicial é **medir e orientar**,
-  não atuar. (Pode virar um objetivo futuro.)
+  não atuar. (Decidido em 2026-06-16; pode virar objetivo futuro.)
 - Não é rede social de jardinagem.
 
 ## Princípios

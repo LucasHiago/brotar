@@ -14,8 +14,12 @@ Notas sobre o que medir, como medir e quais peças usar. Tudo a confirmar na Fas
 | **Condutividade (EC)** | Salinidade / fertilidade geral | ⭐ opcional | 💲💲 médio |
 
 > Observação: o que você chamou de "vitamina" do solo geralmente corresponde ao **NPK**
-> (e a outros nutrientes). É a leitura mais valiosa e, infelizmente, a mais cara/difícil
-> de medir com precisão em sensor barato — por isso é forte candidata a entrar só na v2.
+> (e a outros nutrientes).
+>
+> ✅ **(2026-06-16) Decisão:** umidade + **NPK** + **pH** + luz entram **já no MVP**, porque
+> calcário (pH), luz e nutrientes precisam ser avaliados **por espécie** de frutífera.
+> ⚠️ Risco assumido: sensores baratos de NPK e pH têm precisão limitada — a Fase 1 precisa
+> **validar a confiabilidade** antes de o app prometer esses números.
 
 ## Candidatos de componentes (a avaliar)
 
@@ -35,14 +39,20 @@ Notas sobre o que medir, como medir e quais peças usar. Tudo a confirmar na Fas
 > leituras no app, vale testar o quanto são confiáveis na prática.
 
 ## Energia
-- Bateria 18650 + carregador, possivelmente com **painel solar** se o sensor ficar fixo no sol.
-- Estratégia de **deep sleep**: acorda, mede, envia, dorme — para durar semanas/meses.
+Como o sensor é **fixo 24/7 com Wi-Fi**, o consumo é maior (Wi-Fi gasta bem mais que BLE).
+Opções (decisão pendente — pergunta 7):
+- **Painel solar + bateria 18650** — bom para árvore a céu aberto, sem fio até a tomada.
+- **Tomada** — mais simples, se a árvore estiver perto de uma fonte de energia.
+- Mesmo fixo, vale usar **deep sleep entre as medições** (ex.: mede a cada X minutos/horas
+  e dorme entre elas) para o solar/bateria durar — leituras de solo mudam devagar.
 
 ## Pareamento sensor ↔ planta
 - Cada sensor tem um número de série; no app a pessoa associa "este sensor = esta planta".
 - Definir o fluxo conforme a comunicação escolhida (QR code? BLE scan? digitar código?).
 
 ## Próximos passos de hardware
-1. Decidir Wi-Fi vs BLE (ver [open-questions.md](../docs/open-questions.md)).
-2. Comprar/levantar 1 ESP32 + sensor capacitivo de umidade para o primeiro protótipo.
-3. Validar leitura de umidade antes de investir em NPK/pH.
+1. ✅ Comunicação decidida: **Wi-Fi**, sensor fixo 24/7.
+2. Montar protótipo: **ESP32 + umidade capacitivo + sonda NPK + pH + luz (BH1750)**.
+3. **Validar precisão do NPK e do pH** (maior risco) antes de confiar no app.
+4. Decidir alimentação: **solar** vs **tomada** (pergunta 7).
+5. Decidir: **montar** (ESP32) vs **sensor pronto** de mercado (pergunta 8).

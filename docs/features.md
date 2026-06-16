@@ -2,24 +2,27 @@
 
 Legenda: `[MVP]` essencial para a 1ª versão · `[v2]` próxima fase · `[ideia]` a avaliar.
 
-## Plantas
+## Árvores / plantas
 
-- `[MVP]` Cadastrar uma planta (nome/apelido, foto, espécie, local).
-- `[MVP]` Ver lista de plantas com status resumido (ok / atenção / crítico).
-- `[MVP]` Tela de detalhe da planta com últimas leituras do sensor.
-- `[v2]` Catálogo de espécies com faixas ideais pré-configuradas (ex.: tomate, limoeiro).
+- `[MVP]` Cadastrar uma árvore frutífera (apelido, foto, **espécie**, local).
+- `[MVP]` Ver lista com status resumido (ok / atenção / crítico).
+- `[MVP]` Tela de detalhe com últimas leituras do sensor.
+- `[MVP]` **Catálogo de espécies com faixas ideais por grandeza** (pH, luz, NPK, umidade).
+  Núcleo do produto: como calcário/pH e luz que servem a uma frutífera prejudicam outra,
+  o app só sabe avaliar "bom/ruim" se conhecer a espécie da árvore.
 - `[ideia]` Identificar espécie por foto.
 
 ## Leituras do sensor
 
-- `[MVP]` Receber e exibir: umidade do solo, temperatura, nutrientes (NPK), pH, luz.
-- `[MVP]` Indicar se cada grandeza está dentro / fora da faixa ideal.
+- `[MVP]` Receber e exibir: umidade do solo, nutrientes (NPK), pH, luz, temperatura.
+- `[MVP]` Indicar se cada grandeza está dentro / fora da faixa ideal **da espécie**.
 - `[MVP]` Gráfico de histórico (por dia/semana).
 - `[v2]` Comparar leituras entre plantas.
 
 ## Recomendações e alertas
 
-- `[MVP]` Recomendação de ação baseada nas leituras ("regar", "adubar", "corrigir pH").
+- `[MVP]` Recomendação de ação baseada nas leituras vs. faixa da espécie
+  ("regar", "adubar", "corrigir pH / aplicar calcário", "mover para mais/menos sol").
 - `[MVP]` Notificação push quando algo entra em estado crítico.
 - `[v2]` Lembretes recorrentes (rega, adubação) configuráveis.
 - `[ideia]` Recomendações inteligentes considerando clima/previsão do tempo local.
