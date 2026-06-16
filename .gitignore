@@ -1,0 +1,29 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+*~
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Ambientes / segredos
+.env
+.env.*
+*.local
+
+# Dependências (quando houver código)
+node_modules/
+.expo/
+dist/
+build/
+
+# Firmware / Arduino
+*.bin
+*.elf
+*.hex
+build/
+
+# Logs
+*.log
