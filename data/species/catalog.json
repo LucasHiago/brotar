@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "atualizado_em": "2026-06-17",
+  "aviso": "Faixas INDICATIVAS para guiar o MVP. Variam conforme variedade, clima, idade da planta, tipo de solo e o sensor usado. Validar com fontes agronômicas (ex.: Embrapa) e em campo antes de usar como verdade absoluta. NPK em demanda qualitativa porque valores absolutos de sensor barato ainda precisam de calibração (ver hardware/sensors.md).",
+  "legenda": {
+    "umidade_solo_pct": "Umidade do solo em %. Capacitivo barato dá leitura RELATIVA → calibrar por sensor/solo.",
+    "ph": "pH do solo (água).",
+    "luz": "sol_pleno = 6h+ de sol direto | sol_a_meia_sombra = tolera sombra parcial | meia_sombra = prefere sombra parcial",
+    "npk_demanda": "baixa | média | alta — exigência relativa do nutriente",
+    "calcario": "Resumo prático: a espécie gosta/tolera calagem (calcário, que sobe o pH) ou não."
+  },
+  "especies": [
+    {
+      "id": "limoeiro",
+      "nome_popular": "Limoeiro",
+      "nomes_alt": ["Limão Taiti", "Lima ácida Tahiti"],
+      "nome_cientifico": "Citrus × latifolia",
+      "grupo": "cítrica",
+      "faixas": {
+        "ph": { "min_ideal": 6.0, "max_ideal": 6.5, "min_critico": 5.0, "max_critico": 8.0, "nota": "Levemente ácido a neutro." },
+        "umidade_solo_pct": { "min_ideal": 50, "max_ideal": 70, "min_critico": 30, "max_critico": 85, "nota": "Regular; não encharcar." },
+        "luz": { "categoria": "sol_pleno", "horas_sol_min": 6 },
+        "npk": {
+          "n": { "demanda": "alta", "nota": "Crescimento e folhagem." },
+          "p": { "demanda": "média" },
+          "k": { "demanda": "alta", "nota": "Importante na frutificação." }
+        }
+      },
+      "calcario": "Tolera calagem leve para chegar perto de pH 6,5. Não exagerar.",
+      "observacoes": "Sensível a encharcamento e a salinidade."
+    },
+    {
+      "id": "laranjeira",
+      "nome_popular": "Laranjeira",
+      "nomes_alt": ["Laranja Pera", "Laranja Lima"],
+      "nome_cientifico": "Citrus sinensis",
+      "grupo": "cítrica",
+      "faixas": {
+        "ph": { "min_ideal": 6.0, "max_ideal": 6.5, "min_critico": 5.0, "max_critico": 8.0 },
+        "umidade_solo_pct": { "min_ideal": 50, "max_ideal": 70, "min_critico": 30, "max_critico": 85 },
+        "luz": { "categoria": "sol_pleno", "horas_sol_min": 6 },
+        "npk": {
+          "n": { "demanda": "alta" },
+          "p": { "demanda": "média" },
+          "k": { "demanda": "alta" }
+        }
+      },
+      "calcario": "Igual ao limoeiro: calagem leve para manter pH ~6,5.",
+      "observacoes": "Mesma família do limão; cuidados parecidos."
+    },
+    {
+      "id": "mangueira",
+      "nome_popular": "Mangueira",
+      "nomes_alt": ["Manga Palmer", "Manga Tommy"],
+      "nome_cientifico": "Mangifera indica",
+      "grupo": "tropical",
+      "faixas": {
+        "ph": { "min_ideal": 5.5, "max_ideal": 7.0, "min_critico": 4.5, "max_critico": 8.0, "nota": "Bem tolerante a pH." },
+        "umidade_solo_pct": { "min_ideal": 45, "max_ideal": 65, "min_critico": 25, "max_critico": 80, "nota": "Tolera seca; reduzir água antes da floração ajuda a produzir." },
+        "luz": { "categoria": "sol_pleno", "horas_sol_min": 6 },
+        "npk": {
+          "n": { "demanda": "média", "nota": "Excesso de N atrasa a frutificação." },
+          "p": { "demanda": "média" },
+          "k": { "demanda": "alta" }
+        }
+      },
+      "calcario": "Tolera bem; calagem ok para corrigir solo muito ácido.",
+      "observacoes": "Árvore grande, rústica e resistente à seca quando adulta."
+    },
+    {
+      "id": "abacateiro",
+      "nome_popular": "Abacateiro",
+      "nomes_alt": ["Abacate Hass", "Abacate Margarida"],
+      "nome_cientifico": "Persea americana",
+      "grupo": "tropical",
+      "faixas": {
+        "ph": { "min_ideal": 5.5, "max_ideal": 6.5, "min_critico": 5.0, "max_critico": 7.5 },
+        "umidade_solo_pct": { "min_ideal": 45, "max_ideal": 65, "min_critico": 30, "max_critico": 75, "nota": "MUITO sensível a encharcamento — exige solo bem drenado." },
+        "luz": { "categoria": "sol_pleno", "horas_sol_min": 6 },
+        "npk": {
+          "n": { "demanda": "média" },
+          "p": { "demanda": "média" },
+          "k": { "demanda": "alta" }
+        }
+      },
+      "calcario": "Calagem leve se preciso; é sensível a excesso de sais.",
+      "observacoes": "Raiz sofre com solo úmido demais → drenagem é o ponto crítico."
+    },
+    {
+      "id": "bananeira",
+      "nome_popular": "Bananeira",
+      "nomes_alt": ["Banana Prata", "Banana Nanica"],
+      "nome_cientifico": "Musa spp.",
+      "grupo": "tropical",
+      "faixas": {
+        "ph": { "min_ideal": 6.0, "max_ideal": 6.5, "min_critico": 5.0, "max_critico": 7.5 },
+        "umidade_solo_pct": { "min_ideal": 60, "max_ideal": 80, "min_critico": 40, "max_critico": 90, "nota": "Alta demanda de água, mas com boa drenagem." },
+        "luz": { "categoria": "sol_pleno", "horas_sol_min": 6 },
+        "npk": {
+          "n": { "demanda": "alta" },
+          "p": { "demanda": "baixa" },
+          "k": { "demanda": "alta", "nota": "Bananeira é grande consumidora de potássio (K)." }
+        }
+      },
+      "calcario": "Tolera calagem para chegar a ~6,0–6,5.",
+      "observacoes": "Muita água e muito potássio; sofre com vento forte."
+    },
+    {
+      "id": "goiabeira",
+      "nome_popular": "Goiabeira",
+      "nomes_alt": ["Goiaba vermelha", "Goiaba Paluma"],
+      "nome_cientifico": "Psidium guajava",
+      "grupo": "tropical",
+      "faixas": {
+        "ph": { "min_ideal": 5.5, "max_ideal": 6.5, "min_critico": 4.5, "max_critico": 7.5, "nota": "Bem tolerante." },
+        "umidade_solo_pct": { "min_ideal": 40, "max_ideal": 70, "min_critico": 25, "max_critico": 85, "nota": "Rústica; tolera variação." },
+        "luz": { "categoria": "sol_pleno", "horas_sol_min": 6 },
+        "npk": {
+          "n": { "demanda": "alta" },
+          "p": { "demanda": "média" },
+          "k": { "demanda": "alta" }
+        }
+      },
+      "calcario": "Tolerante; calagem ok em solo ácido.",
+      "observacoes": "Muito rústica e adaptável."
+    },
+    {
+      "id": "aceroleira",
+      "nome_popular": "Aceroleira",
+      "nomes_alt": ["Acerola"],
+      "nome_cientifico": "Malpighia emarginata",
+      "grupo": "tropical",
+      "faixas": {
+        "ph": { "min_ideal": 6.0, "max_ideal": 7.0, "min_critico": 5.5, "max_critico": 7.5, "nota": "Gosta de pH perto do neutro e de cálcio." },
+        "umidade_solo_pct": { "min_ideal": 50, "max_ideal": 70, "min_critico": 30, "max_critico": 85 },
+        "luz": { "categoria": "sol_pleno", "horas_sol_min": 6 },
+        "npk": {
+          "n": { "demanda": "alta" },
+          "p": { "demanda": "média" },
+          "k": { "demanda": "alta" }
+        }
+      },
+      "calcario": "RESPONDE BEM à calagem — gosta de cálcio e pH próximo do neutro.",
+      "observacoes": "Bom exemplo de espécie que se beneficia de calcário."
+    },
+    {
+      "id": "jabuticabeira",
+      "nome_popular": "Jabuticabeira",
+      "nomes_alt": ["Jabuticaba Sabará"],
+      "nome_cientifico": "Plinia cauliflora",
+      "grupo": "nativa",
+      "faixas": {
+        "ph": { "min_ideal": 5.0, "max_ideal": 6.0, "min_critico": 4.5, "max_critico": 6.8, "nota": "Prefere solo ÁCIDO." },
+        "umidade_solo_pct": { "min_ideal": 55, "max_ideal": 75, "min_critico": 35, "max_critico": 85, "nota": "Gosta de umidade constante." },
+        "luz": { "categoria": "sol_a_meia_sombra", "horas_sol_min": 4, "nota": "Adulta quer sol pleno; muda tolera/prefere meia-sombra." },
+        "npk": {
+          "n": { "demanda": "média" },
+          "p": { "demanda": "média" },
+          "k": { "demanda": "média" }
+        }
+      },
+      "calcario": "EVITAR calagem pesada — gosta de solo ácido; calcário em excesso prejudica.",
+      "observacoes": "Crescimento lento. Bom exemplo de espécie que NÃO quer calcário (oposto da acerola)."
+    },
+    {
+      "id": "mamoeiro",
+      "nome_popular": "Mamoeiro",
+      "nomes_alt": ["Mamão Formosa", "Mamão Havaí"],
+      "nome_cientifico": "Carica papaya",
+      "grupo": "tropical",
+      "faixas": {
+        "ph": { "min_ideal": 6.0, "max_ideal": 6.5, "min_critico": 5.5, "max_critico": 7.0 },
+        "umidade_solo_pct": { "min_ideal": 50, "max_ideal": 70, "min_critico": 35, "max_critico": 80, "nota": "Constante, mas ODEIA encharcamento (apodrece o caule)." },
+        "luz": { "categoria": "sol_pleno", "horas_sol_min": 6 },
+        "npk": {
+          "n": { "demanda": "alta", "nota": "Produz fruto o ano todo → exige adubação frequente." },
+          "p": { "demanda": "média" },
+          "k": { "demanda": "alta" }
+        }
+      },
+      "calcario": "Calagem leve para manter pH ~6,0–6,5.",
+      "observacoes": "Drenagem crítica; sensível a frio e a encharcamento."
+    },
+    {
+      "id": "maracujazeiro",
+      "nome_popular": "Maracujazeiro",
+      "nomes_alt": ["Maracujá azedo", "Maracujá amarelo"],
+      "nome_cientifico": "Passiflora edulis",
+      "grupo": "trepadeira",
+      "faixas": {
+        "ph": { "min_ideal": 5.5, "max_ideal": 6.5, "min_critico": 5.0, "max_critico": 7.0 },
+        "umidade_solo_pct": { "min_ideal": 55, "max_ideal": 75, "min_critico": 35, "max_critico": 85, "nota": "Demanda regular de água, com drenagem." },
+        "luz": { "categoria": "sol_pleno", "horas_sol_min": 6 },
+        "npk": {
+          "n": { "demanda": "alta" },
+          "p": { "demanda": "média" },
+          "k": { "demanda": "alta", "nota": "K importante para qualidade do fruto." }
+        }
+      },
+      "calcario": "Calagem ok em solo ácido para chegar a ~6,0.",
+      "observacoes": "Trepadeira, precisa de suporte (espaldeira). Vida produtiva curta."
+    },
+    {
+      "id": "cafeeiro",
+      "nome_popular": "Cafeeiro",
+      "nomes_alt": ["Café arábica"],
+      "nome_cientifico": "Coffea arabica",
+      "grupo": "arbusto",
+      "faixas": {
+        "ph": { "min_ideal": 5.0, "max_ideal": 6.0, "min_critico": 4.5, "max_critico": 6.5, "nota": "Prefere solo ÁCIDO." },
+        "umidade_solo_pct": { "min_ideal": 50, "max_ideal": 70, "min_critico": 30, "max_critico": 80 },
+        "luz": { "categoria": "sol_a_meia_sombra", "horas_sol_min": 4, "nota": "Tolera meia-sombra (café 'sombreado'); também produz a sol pleno." },
+        "npk": {
+          "n": { "demanda": "alta" },
+          "p": { "demanda": "média" },
+          "k": { "demanda": "alta" }
+        }
+      },
+      "calcario": "Calagem só para corrigir acidez EXTREMA — gosta de solo ácido, não alcalinizar demais.",
+      "observacoes": "Bom exemplo de espécie ácida + tolerante à meia-sombra (contrasta com as que exigem sol pleno)."
+    },
+    {
+      "id": "figueira",
+      "nome_popular": "Figueira",
+      "nomes_alt": ["Figo Roxo de Valinhos"],
+      "nome_cientifico": "Ficus carica",
+      "grupo": "temperada",
+      "faixas": {
+        "ph": { "min_ideal": 6.0, "max_ideal": 7.5, "min_critico": 5.5, "max_critico": 8.0, "nota": "Tolera solo mais alcalino/calcário." },
+        "umidade_solo_pct": { "min_ideal": 40, "max_ideal": 65, "min_critico": 25, "max_critico": 80, "nota": "Tolera seca; não gosta de excesso de água." },
+        "luz": { "categoria": "sol_pleno", "horas_sol_min": 6 },
+        "npk": {
+          "n": { "demanda": "média", "nota": "Excesso de N gera muita folha e pouco figo." },
+          "p": { "demanda": "média" },
+          "k": { "demanda": "alta" }
+        }
+      },
+      "calcario": "TOLERA bem calcário/solo alcalino — oposto da jabuticaba e do café.",
+      "observacoes": "Rústica, gosta de sol e de solo bem drenado."
+    }
+  ]
+}

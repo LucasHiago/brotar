@@ -8,7 +8,8 @@
 - [ ] Definir alimentação do sensor (solar vs tomada)
 - [ ] Definir: montar (ESP32) vs sensor pronto de mercado
 - [ ] Escolher stack do app (Expo/Flutter) e backend (Supabase/do zero)
-- [ ] Montar o catálogo inicial de espécies + faixas ideais (frutíferas alvo)
+- [x] Montar o catálogo inicial de espécies + faixas ideais (12 frutíferas) → `data/species/`
+- [ ] Validar as faixas do catálogo com fontes agronômicas (Embrapa) e ampliar a lista
 
 ## Fase 1 — Protótipo de hardware
 - [ ] Montar protótipo do sensor (ESP32 + sensores) numa protoboard
