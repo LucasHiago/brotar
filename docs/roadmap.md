@@ -22,9 +22,13 @@
 - [ ] Motor de regras → primeira recomendação simples
 
 ## Fase 3 — App MVP
-- [ ] Login + cadastro de planta
-- [ ] Parear sensor com planta
-- [ ] Tela de detalhe com leituras e status
+- [x] Stack definida: React Native / Expo (padrão Steply) — esqueleto em `mobile/`
+- [x] Tela "Minhas árvores" (lista + status por espécie)
+- [x] Tela de detalhe com leituras x faixa + recomendações
+- [x] Motor de avaliação no app (`mobile/lib/species.ts`)
+- [ ] Login + cadastro de árvore (hoje usa dados mock)
+- [ ] Parear sensor com árvore
+- [ ] Conectar no backend real (tirar o USE_MOCK)
 - [ ] Notificação de alerta crítico
 
 ## Fase 4 — Validação

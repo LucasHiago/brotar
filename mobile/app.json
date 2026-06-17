@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Brotar",
+    "slug": "brotar",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "brotar",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#F7FAF5"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.brotar.app"
+    },
+    "android": {
+      "package": "com.brotar.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#F7FAF5"
+      },
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE"
+      ]
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

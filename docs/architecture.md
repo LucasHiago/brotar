@@ -36,9 +36,12 @@ Sensor (ESP32 + Wi-Fi) ──▶ Nuvem ──▶ App
 
 ## Camadas (proposta inicial)
 
-### App (mobile)
-- Candidatos: **React Native / Expo** ou **Flutter** (já há `flutter` e `.expo` na máquina).
-- Responsável por: UI, pareamento via BLE (se aplicável), notificações, cache offline.
+### App (mobile) — definido
+- ✅ **React Native / Expo**, seguindo a stack do Steply (`specialist-app`):
+  Expo SDK 52 + **expo-router** + **TypeScript** + **Zustand** + **lucide-react-native**.
+- Esqueleto em [`mobile/`](../mobile/): lista de árvores, detalhe e o **motor de avaliação**
+  (`mobile/lib/species.ts`) que aplica as faixas por espécie.
+- Responsável por: UI, notificações, cache offline; consumir leituras da nuvem.
 
 ### Backend / nuvem
 - API REST (ou GraphQL) para receber leituras e servir o app.
@@ -62,6 +65,7 @@ Sensor (ESP32 + Wi-Fi) ──▶ Nuvem ──▶ App
   espécies é núcleo do MVP, não item futuro.
 - **2026-06-16** — App **só orienta** (não atua) nesta fase.
 - **2026-06-16** — Projeto **pessoal / open source**.
+- **2026-06-17** — App em **React Native / Expo** (stack do Steply). Esqueleto em `mobile/`.
 
-Pendentes: stack do app (Expo vs Flutter), backend (Supabase vs do zero), alimentação do
-sensor (solar vs tomada), montar vs sensor pronto. Ver [open-questions.md](open-questions.md).
+Pendentes: backend (Supabase vs do zero), alimentação do sensor (solar vs tomada),
+montar vs sensor pronto. Ver [open-questions.md](open-questions.md).

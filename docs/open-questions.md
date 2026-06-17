@@ -20,7 +20,9 @@ Decisões já tomadas ficam marcadas com ✅ e data. O resto segue em aberto.
 8. Fabricar/montar (ESP32) ou usar sensor pronto de mercado? → _em aberto_.
 
 ## Software
-9. App: **React Native/Expo** ou **Flutter**? → _em aberto_.
+9. ✅ **(2026-06-17) App em React Native / Expo**, seguindo a stack do Steply
+   (`specialist-app`): Expo SDK 52 + expo-router + TypeScript + Zustand + lucide.
+   Esqueleto criado em `mobile/`.
 10. Backend: do zero ou **Supabase/Firebase**? → _em aberto_.
 11. Precisa de offline robusto? → _em aberto_ (com Wi-Fi fixo, menos crítico).
 
@@ -43,4 +45,4 @@ Decisões já tomadas ficam marcadas com ✅ e data. O resto segue em aberto.
 ### Ainda falta decidir
 - Alimentação do sensor (solar vs tomada) — pergunta 7.
 - Montar (ESP32) vs sensor pronto — pergunta 8.
-- Stack do app (Expo/Flutter) e backend (Supabase/do zero) — perguntas 9 e 10.
+- Backend: Supabase vs do zero — pergunta 10. (App já definido: React Native/Expo.)

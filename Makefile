@@ -1,11 +1,12 @@
 # Brotar — tarefas do projeto (fase de planejamento)
 # Uso: `make` (ajuda) ou `make <alvo>`
 
-CATALOG := data/species/catalog.json
-PY      := python3
+CATALOG     := data/species/catalog.json
+APP_CATALOG := mobile/lib/data/species.json
+PY          := python3
 
 .DEFAULT_GOAL := help
-.PHONY: help validate species stats tree todo decisions check overview
+.PHONY: help validate species stats tree todo decisions check overview sync-catalog catalog-synced
 
 help: ## Lista os alvos disponíveis
 	@echo "Brotar — alvos disponíveis:"
@@ -46,5 +47,12 @@ decisions: ## Mostra as decisões já tomadas
 
 overview: stats species todo ## Visão geral: estatísticas + espécies + pendências
 
-check: validate ## Roda as verificações (hoje: valida o catálogo)
+sync-catalog: ## Copia o catálogo para o app (mobile/lib/data/species.json)
+	@cp $(CATALOG) $(APP_CATALOG) && echo "OK: $(APP_CATALOG) sincronizado com $(CATALOG)"
+
+catalog-synced: ## Verifica se a cópia do app está igual à fonte
+	@if cmp -s $(CATALOG) $(APP_CATALOG); then echo "OK: catálogo do app em sincronia"; \
+	else echo "DESATUALIZADO: rode 'make sync-catalog'"; exit 1; fi
+
+check: validate catalog-synced ## Roda as verificações (valida JSON + sincronia do catálogo)
 	@echo "Tudo certo."
