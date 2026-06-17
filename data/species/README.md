@@ -39,7 +39,8 @@ Por isso o NPK está em **demanda qualitativa** (baixa/média/alta), não em val
       "k": { ... }
     }
   },
-  "calcario": "resumo prático: gosta/tolera calagem ou não",
+  "calcario_resposta": "gosta|tolera|evitar",  // campo estruturado p/ o app
+  "calcario": "resumo prático em texto livre",
   "observacoes": "texto livre"
 }
 ```
