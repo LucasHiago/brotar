@@ -17,9 +17,14 @@
 - [ ] Enviar uma leitura para um endpoint de teste
 
 ## Fase 2 — Backend mínimo
-- [ ] API para receber e armazenar leituras
-- [ ] Modelo de dados implementado
-- [ ] Motor de regras → primeira recomendação simples
+- [x] Stack definida: NestJS (padrão Steply) — esqueleto em `backend/`
+- [x] Modelo de dados implementado (entidades User/Plant/Device/Reading)
+- [x] API para receber e armazenar leituras (`POST /api/readings`)
+- [x] Motor de regras no servidor (`GET /api/plants/:id/status`)
+- [x] Auth JWT (register/login/me) + CRUD de árvores + pareamento de sensor
+- [ ] `npm install` + subir um Postgres e testar de ponta a ponta
+- [ ] Trocar auth do sensor (hoje só serial) por token por device
+- [ ] Notificações push em alerta crítico
 
 ## Fase 3 — App MVP
 - [x] Stack definida: React Native / Expo (padrão Steply) — esqueleto em `mobile/`

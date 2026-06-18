@@ -3,6 +3,7 @@
 
 CATALOG     := data/species/catalog.json
 APP_CATALOG := mobile/lib/data/species.json
+API_CATALOG := backend/src/species/catalog.json
 PY          := python3
 
 .DEFAULT_GOAL := help
@@ -47,12 +48,14 @@ decisions: ## Mostra as decisões já tomadas
 
 overview: stats species todo ## Visão geral: estatísticas + espécies + pendências
 
-sync-catalog: ## Copia o catálogo para o app (mobile/lib/data/species.json)
-	@cp $(CATALOG) $(APP_CATALOG) && echo "OK: $(APP_CATALOG) sincronizado com $(CATALOG)"
+sync-catalog: ## Copia o catálogo para o app e o backend
+	@cp $(CATALOG) $(APP_CATALOG) && echo "OK: app  -> $(APP_CATALOG)"
+	@cp $(CATALOG) $(API_CATALOG) && echo "OK: api  -> $(API_CATALOG)"
 
-catalog-synced: ## Verifica se a cópia do app está igual à fonte
-	@if cmp -s $(CATALOG) $(APP_CATALOG); then echo "OK: catálogo do app em sincronia"; \
-	else echo "DESATUALIZADO: rode 'make sync-catalog'"; exit 1; fi
+catalog-synced: ## Verifica se as cópias (app e backend) batem com a fonte
+	@cmp -s $(CATALOG) $(APP_CATALOG) || { echo "DESATUALIZADO (app): rode 'make sync-catalog'"; exit 1; }
+	@cmp -s $(CATALOG) $(API_CATALOG) || { echo "DESATUALIZADO (api): rode 'make sync-catalog'"; exit 1; }
+	@echo "OK: catálogo do app e do backend em sincronia"
 
 check: validate catalog-synced ## Roda as verificações (valida JSON + sincronia do catálogo)
 	@echo "Tudo certo."

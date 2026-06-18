@@ -43,13 +43,15 @@ Sensor (ESP32 + Wi-Fi) ──▶ Nuvem ──▶ App
   (`mobile/lib/species.ts`) que aplica as faixas por espécie.
 - Responsável por: UI, notificações, cache offline; consumir leituras da nuvem.
 
-### Backend / nuvem
-- API REST (ou GraphQL) para receber leituras e servir o app.
-- Banco: relacional (Postgres) — dados são bem estruturados (ver data-model).
-- Para séries temporais de leituras, avaliar tabela particionada ou TimescaleDB.
-- Motor de regras: gera recomendações a partir de leitura × faixa ideal.
-- Serviço de notificações push (FCM/APNs).
-- Candidatos gerenciados p/ acelerar MVP: Supabase / Firebase.
+### Backend / nuvem — definido
+- ✅ **NestJS** (padrão dos backends Steply): TypeORM/**Postgres** + JWT (passport-jwt) +
+  class-validator + Swagger + @nestjs/config. Esqueleto em [`backend/`](../backend/).
+- Módulos: auth, users, species (catálogo), plants, devices, readings, evaluation.
+- **Motor de regras roda no servidor** (`backend/src/evaluation/rules.ts`, mesma lógica do
+  app) → endpoint `GET /api/plants/:id/status`.
+- Ingestão do sensor: `POST /api/readings` (sensor se identifica pelo serial).
+- Para séries temporais de leituras, futuramente avaliar particionamento/TimescaleDB.
+- Pendente: notificações push (FCM/APNs).
 
 ### Firmware (sensor)
 - Microcontrolador **ESP32** (tem Wi-Fi + BLE, barato, comum) — há `Arduino`/`.arduino15`
@@ -66,6 +68,7 @@ Sensor (ESP32 + Wi-Fi) ──▶ Nuvem ──▶ App
 - **2026-06-16** — App **só orienta** (não atua) nesta fase.
 - **2026-06-16** — Projeto **pessoal / open source**.
 - **2026-06-17** — App em **React Native / Expo** (stack do Steply). Esqueleto em `mobile/`.
+- **2026-06-18** — Backend em **NestJS** (padrão Steply). Esqueleto em `backend/`.
 
-Pendentes: backend (Supabase vs do zero), alimentação do sensor (solar vs tomada),
-montar vs sensor pronto. Ver [open-questions.md](open-questions.md).
+Pendentes: alimentação do sensor (solar vs tomada), montar vs sensor pronto.
+Ver [open-questions.md](open-questions.md).

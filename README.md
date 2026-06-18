@@ -33,6 +33,7 @@ a espécie da árvore**, já que pH e luz que fazem bem a uma frutífera prejudi
 - [`docs/open-questions.md`](docs/open-questions.md) — decisões em aberto
 - [`data/species/`](data/species/) — **catálogo de espécies + faixas ideais** (núcleo do MVP)
 - [`mobile/`](mobile/) — **app React Native / Expo** (padrão Steply) com o motor de avaliação
+- [`backend/`](backend/) — **API NestJS** (TypeORM/Postgres + JWT) com o motor no servidor
 
 ## Próximo passo
 
